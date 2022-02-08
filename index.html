@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>年终奖还是分月发</title>
+     <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.0/echarts.min.js"></script>
+  </head>
+  <body>
+    <!-- Prepare a DOM with a defined width and height for ECharts -->
+    除去五险一金后的月收入：<input id="p_earn_after_per_moth" value="30000" /><br />
+    每个月专项扣除：<input id="p_zhuanxiang" value="2000" />
+    <button onclick="loadData();">重新加载</button>
+    <div id="main" style="width: 100%;height:800px;"></div>
+    <script src="./main.js"></script>
+  </body>
+</html>
