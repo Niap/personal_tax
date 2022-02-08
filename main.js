@@ -19,7 +19,7 @@ function personal_tax(p_tax_after){
     const p_tax_free = 60000
     var p_tax_total = p_tax_after - p_tax_free;
     var p_tax_result = 0;
-    if( p_tax_total < p_tax_free ){
+    if( p_tax_total <= 0 ){
         return p_tax_result;
     }
     if( p_tax_total > 960000 ){
@@ -112,13 +112,13 @@ function loadData(){
     option.series[0].data = [];
     var p_tax_per_year = (p_earn_after_per_moth-p_zhuanxiang) * 12;
     for( var x = 0;x<=p_tax_per_year; ){
-        var p_tax_per_year_left = p_tax_per_year - x;
         option.xAxis.data.push(x);
+        var p_tax_per_year_left = p_tax_per_year - x;
         var a = personal_tax(p_tax_per_year_left)
         var b = bonus_tax(x)
         option.series[0].data.push((a+b).toFixed());
+        console.log(x,a,b);
         x += 1000;
-        console.log(p_tax_per_year_left,a,b);
     }
     myChart.setOption(option);
 }
