@@ -117,10 +117,11 @@ function loadData(){
         var a = personal_tax(p_tax_per_year_left)
         var b = bonus_tax(x)
         option.series[0].data.push((a+b).toFixed());
-        console.log(x,a,b);
+        //console.log(x,a,b);
         x += 1000;
     }
     myChart.setOption(option);
 }
 
 loadData();
+console.log("v1.0.1")
